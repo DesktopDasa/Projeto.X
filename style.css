@@ -1,0 +1,179 @@
+:root {
+    --cor-principal: #00f2ff; /* Um azul neon */
+    --cor-fundo: #121212;
+    --cor-card: #1e1e1e;
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #a7a7a7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070') no-repeat center center/cover;
+    text-align: center;
+    padding: 6rem 1rem;
+    color: white;
+}
+
+header h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px var(--cor-principal);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--cor-texto-secundario);
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
+
+section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--cor-principal);
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--cor-card);
+    padding: 2rem;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    border: 1px solid #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--cor-principal);
+}
+
+.card p, .card ul {
+    color: var(--cor-texto-secundario);
+    text-align: left;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.ticket {
+    position: relative;
+    border-top: 5px solid var(--cor-principal);
+}
+
+.vip {
+    border-color: #00f2ff; /* Cor diferente para o VIP */
+}
+
+.vip-tag {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.btn-comprar {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+}
+
+.vip .btn-comprar {
+    background-color: #00f2ff;
+}
+
+/* Countdown */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.time-block {
+    background: var(--cor-card);
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 120px;
+}
+
+.time-block span {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+.time-block small {
+    font-size: 1rem;
+    color: var(--cor-texto-secundario);
+}
+
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--cor-card);
+    margin-top: 3rem;
+    color: var(--cor-texto-secundario);
+}
