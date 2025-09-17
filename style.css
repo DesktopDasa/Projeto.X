@@ -1,9 +1,9 @@
 :root {
-    --cor-principal: #00f2ff; /* Um azul neon */
+    --cor-principal: #ffffff; /* branco */
     --cor-fundo: #121212;
     --cor-card: #1e1e1e;
     --cor-texto: #ffffff;
-    --cor-texto-secundario: #a7a7a7;
+    --cor-texto-secundario: #d0d0d0;
 }
 
 * {
@@ -14,9 +14,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--cor-fundo);
+    background: linear-gradient(to bottom, #121212, #ff4444); /* preto → vermelho */
     color: var(--cor-texto);
-    line-height: 1.6;
+    line-height: 2.6;
 }
 
 header {
@@ -64,19 +64,22 @@ h2 {
 }
 
 .card {
+    position: relative;
     background-color: var(--cor-card);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 12px;
     flex: 1;
     min-width: 280px;
     max-width: 350px;
-    border: 1px solid #333;
+    border: 2px solid var(--cor-principal);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--cor-texto);
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
 .card h3 {
@@ -100,12 +103,11 @@ h2 {
 }
 
 .ticket {
-    position: relative;
     border-top: 5px solid var(--cor-principal);
 }
 
 .vip {
-    border-color: #00f2ff; /* Cor diferente para o VIP */
+    border-color: var(--cor-principal);
 }
 
 .vip-tag {
@@ -139,7 +141,7 @@ h2 {
 }
 
 .vip .btn-comprar {
-    background-color: #00f2ff;
+    background-color: var(--cor-principal);
 }
 
 /* Countdown */
@@ -147,14 +149,19 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .time-block {
-    background: var(--cor-card);
+    background-color: var(--cor-card);
+    border: 2px solid var(--cor-principal);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 12px;
     width: 120px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: var(--cor-texto);
 }
 
 .time-block span {
@@ -162,11 +169,15 @@ h2 {
     font-size: 3rem;
     font-weight: bold;
     color: var(--cor-principal);
+    text-shadow: 0 0 10px var(--cor-principal);
 }
 
 .time-block small {
     font-size: 1rem;
     color: var(--cor-texto-secundario);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 footer {
@@ -229,4 +240,65 @@ footer {
     .time-block span {
         font-size: 2.2rem;
     }
+}
+
+.etiqueta-preco {
+    position: absolute;
+    top: 20px;
+    left: -25px;
+    background: linear-gradient(135deg, #ff2b2b, #ff2b2b);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transform: rotate(-10deg);
+    z-index: 10;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    animation: bounceIn 0.6s ease-out;
+}
+
+/* Triângulo pendurado */
+.etiqueta-preco::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ff2b2b;
+}
+
+/* Versão VIP dourada com ícone */
+.etiqueta-preco.vip {
+    background: linear-gradient(135deg, #ff2b2b, #ff2b2b);
+    color: #ffffff;
+}
+
+.etiqueta-preco.vip::after {
+    border-top-color: #ff2b2b;
+}
+
+/* Animação bounce */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5) rotate(-10deg);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2) rotate(-10deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(-10deg);
+    }
+}
+
+/* Garante que o card permita posicionamento absoluto */
+.card.ticket {
+    position: relative;
 }
