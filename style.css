@@ -148,7 +148,7 @@ h2 {
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 2rem;
     flex-wrap: wrap;
 }
@@ -212,7 +212,7 @@ footer {
 @media (max-width: 768px) {
   #countdown {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 1rem;
   }
@@ -229,9 +229,11 @@ footer {
         max-width: 100%;
     }
 
-    .time-block {
-        width: 80px;
+   .time-block {
+        min-width: 90px;
+        flex-shrink: 0;   
         padding: 1rem;
+        text-align: center;
     }
 
     .time-block span {
