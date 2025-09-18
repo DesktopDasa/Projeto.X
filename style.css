@@ -211,10 +211,16 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
   #countdown {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1rem;
+  max-width: 100%;       /* garante que não ultrapasse o site */
+  box-sizing: border-box;
+}
   }
     header p {
         font-size: 1rem;
@@ -230,10 +236,11 @@ footer {
     }
 
    .time-block {
-        min-width: 90px;
+        min-width: 80px;
         flex-shrink: 0;   
         padding: 1rem;
         text-align: center;
+        box-sizing: border-box;
     }
 
     .time-block span {
