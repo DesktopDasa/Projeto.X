@@ -210,10 +210,12 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-
+  #countdown {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
     header p {
         font-size: 1rem;
     }
@@ -233,7 +235,7 @@ footer {
     }
 
     .time-block {
-        width: 100px;
+        width: 80px;
         padding: 1rem;
     }
 
