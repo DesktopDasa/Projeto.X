@@ -213,11 +213,12 @@ footer {
   #countdown {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: nowrap;
   overflow-x: hidden;
-  padding: 1rem;
-  max-width: 100%;       /* garante que não ultrapasse o site */
+  gap: 0.5rem;
+  padding: 0.8rem;
+  max-width: 100%;      
   box-sizing: border-box;
    }
     header p {
@@ -325,4 +326,9 @@ footer {
 /* Garante que o card permita posicionamento absoluto */
 .card.ticket {
     position: relative;
+}  
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
